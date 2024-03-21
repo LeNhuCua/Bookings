@@ -1,0 +1,21 @@
+﻿@model List<User>
+@using Entities.Models;
+@using Config.Helpers;
+
+@{
+  ViewData["Title"] = "Home Page";
+  var users = Model as List<User>;
+}
+
+<div class="text-center">
+  <h1 class="display-4">Welcome</h1>
+  <div class="menu-item px-5">
+    @foreach (var user in users)
+    {
+      <h1>@user.Address</h1>
+    }
+
+    <a asp-action="Logout" asp-controller="Authentication" class="menu-link px-5">Đăng
+      xuất</a>
+  </div>
+</div>
