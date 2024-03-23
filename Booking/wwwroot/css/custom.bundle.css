@@ -1,0 +1,68 @@
+﻿.modal-dialog .alert .btn {
+    pointer-events: auto;
+}
+
+.form-control.form-inline {
+    display: inline-block;
+}
+.price-common {
+    font-weight: 500;
+    color: #5E6278;
+}
+.pe-none {
+    background-color: #EFF2F5;
+    opacity: 1;
+}
+
+a > i, a > span {
+    pointer-events: none;
+}
+
+table > tbody > tr:has(td):has(div):has(.collapse) {
+    display: none;
+}
+
+table > tbody > tr:has(td):has(div):has(.collapse.show) {
+    display: contents;
+}
+
+.border-between > div:not(:last-child) {
+    border-bottom: 1px dashed #EFF2F5;
+    padding-bottom: 1.25rem;
+}
+
+.border-between > div:not(:last-child):not(:first-child) {
+    padding-top: 1.25rem;
+}
+
+.border-between > div:last-child:not(:only-child) {
+    padding-top: 1.25rem;
+}
+
+.quote-table > thead > tr > th:nth-child(1),
+.quote-table > tbody > tr > td:nth-child(1) {
+    padding-left: 5px;
+}
+
+.quote-table > thead > tr > th:nth-last-child(1),
+.quote-table > tbody > tr > td:nth-last-child(1) {
+    padding-right: 5px;
+}
+
+li{
+    display: list-item;
+    text-align: left;
+}
+.min-w-125{
+    min-width: 125px;
+}
+.min-w-60{
+    min-width: 56px;
+}
+.surcharge{
+    margin-left: 58px;
+}
+.service-in-day{
+    max-height: 500px;
+    overflow: scroll;
+}

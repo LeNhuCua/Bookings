@@ -1,0 +1,252 @@
+@font-face {
+	font-family: "hotels-icon";
+	src: url("hotels-icon.eot");
+	src: url("hotels-icon.eot#iefix") format("embedded-opentype"),
+	url("hotels-icon.woff") format("woff"),
+	url("hotels-icon.ttf") format("truetype"),
+	url("hotels-icon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="hotels-icon-"]:before, [class*=" hotels-icon-"]:before,
+[class^="hotels-icon-"]:after, [class*=" hotels-icon-"]:after {   
+	font-family: hotels-icon;
+    	font-family: icon-inn;
+	   display: inline-block;
+	  font: normal normal normal 14px/1 hotels-icon;
+	  font-size: inherit;
+	  text-rendering: auto;
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	  transform: translate(0, 0);
+}.hotels-icon-alarm54:before {
+	content: "\e000";
+}
+.hotels-icon-basin:before {
+	content: "\e001";
+}
+.hotels-icon-bathtub7:before {
+	content: "\e002";
+}
+.hotels-icon-bed28:before {
+	content: "\e003";
+}
+.hotels-icon-bed29:before {
+	content: "\e004";
+}
+.hotels-icon-beer23:before {
+	content: "\e005";
+}
+.hotels-icon-bellhop:before {
+	content: "\e006";
+}
+.hotels-icon-bottle43:before {
+	content: "\e007";
+}
+.hotels-icon-bowling24:before {
+	content: "\e008";
+}
+.hotels-icon-briefcase54:before {
+	content: "\e009";
+}
+.hotels-icon-camera88:before {
+	content: "\e00a";
+}
+.hotels-icon-camera89:before {
+	content: "\e00b";
+}
+.hotels-icon-clock102:before {
+	content: "\e00c";
+}
+.hotels-icon-closed67:before {
+	content: "\e00d";
+}
+.hotels-icon-clothes-iron:before {
+	content: "\e00e";
+}
+.hotels-icon-coat-check:before {
+	content: "\e00f";
+}
+.hotels-icon-cocktail34:before {
+	content: "\e010";
+}
+.hotels-icon-coffee71:before {
+	content: "\e011";
+}
+.hotels-icon-computer170:before {
+	content: "\e012";
+}
+.hotels-icon-credit-card8:before {
+	content: "\e013";
+}
+.hotels-icon-desk-bell:before {
+	content: "\e014";
+}
+.hotels-icon-digital25:before {
+	content: "\e015";
+}
+.hotels-icon-dollar179:before {
+	content: "\e016";
+}
+.hotels-icon-door-hanger:before {
+	content: "\e017";
+}
+.hotels-icon-down-arrow:before {
+	content: "\e018";
+}
+.hotels-icon-dumbbell25:before {
+	content: "\e019";
+}
+.hotels-icon-elevator10:before {
+	content: "\e01a";
+}
+.hotels-icon-fast-food1:before {
+	content: "\e01b";
+}
+.hotels-icon-fire-extinguisher:before {
+	content: "\e01c";
+}
+.hotels-icon-five-stars:before {
+	content: "\e01d";
+}
+.hotels-icon-food40:before {
+	content: "\e01e";
+}
+.hotels-icon-golf31:before {
+	content: "\e01f";
+}
+.hotels-icon-hairdresser17:before {
+	content: "\e020";
+}
+.hotels-icon-hair-dryer:before {
+	content: "\e021";
+}
+.hotels-icon-hamburger8:before {
+	content: "\e022";
+}
+.hotels-icon-hanger21:before {
+	content: "\e023";
+}
+.hotels-icon-hanger22:before {
+	content: "\e024";
+}
+.hotels-icon-hanger23:before {
+	content: "\e025";
+}
+.hotels-icon-hotel76:before {
+	content: "\e026";
+}
+.hotels-icon-ice-cream1:before {
+	content: "\e027";
+}
+.hotels-icon-info24:before {
+	content: "\e028";
+}
+.hotels-icon-key176:before {
+	content: "\e029";
+}
+.hotels-icon-key177:before {
+	content: "\e02a";
+}
+.hotels-icon-keycard:before {
+	content: "\e02b";
+}
+.hotels-icon-left-luggage:before {
+	content: "\e02c";
+}
+.hotels-icon-luggage5:before {
+	content: "\e02d";
+}
+.hotels-icon-luggage6:before {
+	content: "\e02e";
+}
+.hotels-icon-maid:before {
+	content: "\e02f";
+}
+.hotels-icon-no-smoking:before {
+	content: "\e030";
+}
+.hotels-icon-open213:before {
+	content: "\e031";
+}
+.hotels-icon-parking19:before {
+	content: "\e032";
+}
+.hotels-icon-plunger:before {
+	content: "\e033";
+}
+.hotels-icon-pool4:before {
+	content: "\e034";
+}
+.hotels-icon-receptionist1:before {
+	content: "\e035";
+}
+.hotels-icon-receptionist:before {
+	content: "\e036";
+}
+.hotels-icon-restaurant50:before {
+	content: "\e037";
+}
+.hotels-icon-semicircle2:before {
+	content: "\e038";
+}
+.hotels-icon-smoking8:before {
+	content: "\e039";
+}
+.hotels-icon-soup12:before {
+	content: "\e03a";
+}
+.hotels-icon-sun-umbrella1:before {
+	content: "\e03b";
+}
+.hotels-icon-surveillance86:before {
+	content: "\e03c";
+}
+.hotels-icon-sweep:before {
+	content: "\e03d";
+}
+.hotels-icon-swimming-pool:before {
+	content: "\e03e";
+}
+.hotels-icon-taxi21:before {
+	content: "\e03f";
+}
+.hotels-icon-telephone107:before {
+	content: "\e040";
+}
+.hotels-icon-tennis26:before {
+	content: "\e041";
+}
+.hotels-icon-thermometer55:before {
+	content: "\e042";
+}
+.hotels-icon-thermometer56:before {
+	content: "\e043";
+}
+.hotels-icon-toilet11:before {
+	content: "\e044";
+}
+.hotels-icon-toothpaste1:before {
+	content: "\e045";
+}
+.hotels-icon-towel4:before {
+	content: "\e046";
+}
+.hotels-icon-tray22:before {
+	content: "\e047";
+}
+.hotels-icon-tree-stars:before {
+	content: "\e048";
+}
+.hotels-icon-tv27:before {
+	content: "\e049";
+}
+.hotels-icon-up-arrow:before {
+	content: "\e04a";
+}
+.hotels-icon-waiter3:before {
+	content: "\e04b";
+}
+.hotels-icon-washing-machine:before {
+	content: "\e04c";
+}
