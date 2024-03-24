@@ -39722,7 +39722,7 @@ code:not([class*=language-]) {
 }
 .form-control.form-control-solid {
   background-color: #F5F8FA;
-  border-color: #F5F8FA;
+  border-color: #5E6278;
   color: #5E6278;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -39735,7 +39735,7 @@ code:not([class*=language-]) {
 }
 .dropdown.show > .form-control.form-control-solid, .form-control.form-control-solid:active, .form-control.form-control-solid.active, .form-control.form-control-solid:focus, .form-control.form-control-solid.focus {
   background-color: #eef3f7;
-  border-color: #eef3f7;
+  border-color: #5E6278;
   color: #5E6278;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -39784,7 +39784,7 @@ code:not([class*=language-]) {
 }
 .form-select.form-select-solid {
   background-color: #F5F8FA;
-  border-color: #F5F8FA;
+  border-color: #5E6278;
   color: #5E6278;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -39797,7 +39797,7 @@ code:not([class*=language-]) {
 }
 .dropdown.show > .form-select.form-select-solid, .form-select.form-select-solid:active, .form-select.form-select-solid.active, .form-select.form-select-solid:focus, .form-select.form-select-solid.focus {
   background-color: #eef3f7;
-  border-color: #eef3f7 !important;
+  border-color: #5E6278 !important;
   color: #5E6278;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -48489,7 +48489,7 @@ body.page-bg-image-lg {
       border: none;
       border-left: 1px solid #ddd
     }
-    
+
     table {
       border : 2px solid #062eb6;
       margin-top: 10px;

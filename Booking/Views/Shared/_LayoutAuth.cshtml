@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Booking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/plugins.bundle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.bundle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/custom.bundle.css" asp-append-version="true" />
+</head>
+<body id="kt_body" style="background-image: url(/images/patterns/header-bg.png)" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled">
+    <!--begin::Main-->
+    <!--begin::Root-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="page d-flex flex-row flex-column-fluid">
+            <!--begin::Wrapper-->
+            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+                @RenderBody()
+                <!--end::Container-->
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Page-->
+    </div>
+    <!--end::Root-->
+    <!--begin::Global Javascript Bundle(used by all pages)-->
+    <script src="~/js/plugins.bundle.js" asp-append-version="true"></script>
+    <script src="~/js/scripts.bundle.js" asp-append-version="true"></script>
+    <script src="~/lib/tinymce/tinymce.bundle.js"></script>
+    <script src="~/js/custom/custom.bundle.js" asp-append-version="true"></script>
+    <!--end::Global Javascript Bundle-->
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

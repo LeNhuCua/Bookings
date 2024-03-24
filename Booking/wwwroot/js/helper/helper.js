@@ -51,7 +51,7 @@ function buildOptionsTwoLevelInTraining(data, valueKey = '', labelKey = '', sele
                             <option ${selectedValue === subItem[valueKey] && 'selected'} value="${subItem[valueKey]}">
                             ${subItem[labelKey]}
                             </option>
-                        `   
+                        `
                     }).join('')
                 }
                 </optgroup>
@@ -60,7 +60,7 @@ function buildOptionsTwoLevelInTraining(data, valueKey = '', labelKey = '', sele
             return `<option ${selectedValue === item[valueKey] && 'selected'} value="${item[valueKey]}">${item[labelKey]}</option>`;
         }
     }).join('')
-    
+
     // const level1Options = data
     //     .filter(item => !item.parentCategoryId)
     //     .map(item => {
@@ -95,8 +95,8 @@ const formatCurrency = (amount) => {
 
 /** DD-MM-YYYY */
 /**
- * @param {Date | string} date 
- * @returns 
+ * @param {Date | string} date
+ * @returns
  */
 const formatDateTime = (date) => {
     if (!date) return "";
@@ -150,9 +150,9 @@ const getDaysInMonth = (year, month) => {
 
 /**
  * Tính phầm trăm tăng trưởng
- * @param {number} value 
- * @param {number} prevValue 
- * @returns 
+ * @param {number} value
+ * @param {number} prevValue
+ * @returns
  */
 const calculateGrowthPercentage = (value, prevValue) => {
     const result = prevValue > 0
@@ -231,7 +231,5 @@ const initTinymce = () => {
         remove_script_host: false,
         convert_urls: false,
         ui_mode: 'split',
-        // relative_urls : true,
-        // document_base_url : 'https://admin.findtour.vn/'
     });
 }

@@ -1,10 +1,8 @@
 ﻿@model Services.LoginModel
 @{
-    Layout = "_Layout";
+    Layout = "_LayoutAuth";
     ViewData["Title"] = "Đăng nhập";
 }
-
-
 
 
 <!--begin::Main-->
@@ -17,7 +15,7 @@
 
             <!--end::Logo-->
             <!--begin::Wrapper-->
-            <div class="w-lg-500px  rounded shadow-sm p-10 p-lg-15 mx-auto">
+            <div class="w-lg-500px bg-body  rounded shadow-sm p-10 p-lg-15 mx-auto">
                 <!--begin::Form-->
                 <form class="form w-100" novalidate="novalidate" asp-action="SignIn" method="post">
                     <!--begin::Heading-->
@@ -53,7 +51,7 @@
                         <input class="form-control form-control-lg form-control-solid" type="password" asp-for="Password" autocomplete="off" />
                         <!--end::Input-->
                     </div>
-                    <div>
+                    <div class="text-danger fw-bold">
                         @Html.ValidationSummary()
                     </div>
                     <!--end::Input group-->
@@ -63,6 +61,12 @@
                         <button type="submit" class="btn btn-lg btn-primary w-100 mb-5">
                             <span class="indicator-label">Đăng nhập</span>
                         </button>
+                        <!--end::Submit button-->
+                    </div>
+                      <div class="text-center">
+                        <!--begin::Submit button-->
+                        <p>Email: cualn@gmail.com</p>
+                        <p>Pass: 1234567</p>
                         <!--end::Submit button-->
                     </div>
                     <!--end::Actions-->

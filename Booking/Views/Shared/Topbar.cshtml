@@ -1,0 +1,644 @@
+﻿@using Services
+@inject IBookingService _bookingService;
+@{
+    Entities.Models.User? currentUser = await _bookingService.authService.GetCurrentUser();
+}
+<!--begin::Drawers-->
+<!--begin::Activities drawer-->
+<div id="kt_activities" class="bg-body" data-kt-drawer="true" data-kt-drawer-name="activities" data-kt-drawer-activate="true" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'300px', 'lg': '900px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_activities_toggle" data-kt-drawer-close="#kt_activities_close">
+    <div class="card shadow-none rounded-0">
+        <!--begin::Header-->
+        <div class="card-header" id="kt_activities_header">
+            <h3 class="card-title fw-bolder text-dark">Cấu hình dữ liệu chung</h3>
+            <div class="card-toolbar">
+                <button type="button" class="btn btn-sm btn-icon btn-active-light-primary me-n5" id="kt_activities_close">
+                    <!--begin::Svg Icon-->
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                </button>
+            </div>
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body position-relative" id="kt_activities_body">
+            <!--begin::Content-->
+            <div id="kt_activities_scroll" class="position-relative scroll-y me-n5 pe-5" data-kt-scroll="true" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_activities_body" data-kt-scroll-dependencies="#kt_activities_header, #kt_activities_footer" data-kt-scroll-offset="5px">
+                <!--begin::Timeline items-->
+                <div class="timeline">
+                    <!--begin::Timeline item-->
+                    <div class="timeline-item">
+                        <!--begin::Timeline line-->
+                        <div class="timeline-line w-40px"></div>
+                        <!--end::Timeline line-->
+                        <!--begin::Timeline icon-->
+                        <div class="timeline-icon symbol symbol-circle symbol-40px">
+                            <div class="symbol-label bg-light">
+                                <!--begin::Svg Icon-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="currentColor"></path>
+									<path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="currentColor"></path>
+								</svg>
+                                <!--end::Svg Icon-->
+                            </div>
+                        </div>
+                        <!--end::Timeline icon-->
+                        <!--begin::Timeline content-->
+                        <div class="timeline-content mb-3 mt-n1">
+                            <!--begin::Timeline heading-->
+                            <div class="mb-3 mt-3 pe-3">
+                                <!--begin::Title-->
+                                <div class="fs-5 fw-bold text-gray-800 text-hover-primary">Vé máy bay</div>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Timeline heading-->
+                            <!--begin::Timeline details-->
+                            <div class="overflow-auto pb-5">
+                                <div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-5">
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="Airlines" class="fs-6 text-hover-primary fw-bolder">Hãng hàng không</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--begin::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="Airports" class="fs-6 text-hover-primary fw-bolder">Sân bay</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="Flights" class="fs-6 text-hover-primary fw-bolder">Chặng bay</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="ListofFlights" class="fs-6 text-hover-primary fw-bolder">Chuyến bay</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Icon-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="FlightClasses" class="fs-6 text-hover-primary fw-bolder">Hạng vé</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Icon-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="TicketTypes" class="fs-6 text-hover-primary fw-bolder">Loại vé</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Icon-->
+                                    </div>
+                                    <!--end::Item-->
+                                </div>
+                            </div>
+                            <!--end::Timeline details-->
+                        </div>
+                        <!--end::Timeline content-->
+                    </div>
+                    <!--end::Timeline item-->
+                    <!--begin::Timeline item-->
+                    <div class="timeline-item">
+                        <!--begin::Timeline line-->
+                        <div class="timeline-line w-40px"></div>
+                        <!--end::Timeline line-->
+                        <!--begin::Timeline icon-->
+                        <div class="timeline-icon symbol symbol-circle symbol-40px">
+                            <div class="symbol-label bg-light">
+                                <!--begin::Svg Icon-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="currentColor"></path>
+									<path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="currentColor"></path>
+								</svg>
+                                <!--end::Svg Icon-->
+                            </div>
+                        </div>
+                        <!--end::Timeline icon-->
+                        <!--begin::Timeline content-->
+                        <div class="timeline-content mb-3 mt-n1">
+                            <!--begin::Timeline heading-->
+                            <div class="mb-3 mt-3 pe-3">
+                                <!--begin::Title-->
+                                <div class="fs-5 fw-bold text-gray-800 text-hover-primary">Khách sạn</div>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Timeline heading-->
+                            <!--begin::Timeline details-->
+                            <div class="overflow-auto pb-5">
+                                <div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-5">
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="ViewTypes" class="fs-6 text-hover-primary fw-bolder">Hướng phòng</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="Hotels" class="fs-6 text-hover-primary fw-bolder">Khách sạn</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Icon-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="HotelTypes" class="fs-6 text-hover-primary fw-bolder">Loại khách sạn</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Icon-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="Facilities" class="fs-6 text-hover-primary fw-bolder">Tiện nghi</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Icon-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="Destinations" class="fs-6 text-hover-primary fw-bolder">Điểm đến</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Icon-->
+                                    </div>
+                                    <!--end::Item-->
+                                </div>
+                            </div>
+                            <!--end::Timeline details-->
+                        </div>
+                        <!--end::Timeline content-->
+                    </div>
+                    <!--end::Timeline item-->
+                    <!--begin::Timeline item-->
+                    <div class="timeline-item">
+                        <!--begin::Timeline line-->
+                        <div class="timeline-line w-40px"></div>
+                        <!--end::Timeline line-->
+                        <!--begin::Timeline icon-->
+                        <div class="timeline-icon symbol symbol-circle symbol-40px">
+                            <div class="symbol-label bg-light">
+                                <!--begin::Svg Icon-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="currentColor"></path>
+									<path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="currentColor"></path>
+								</svg>
+                                <!--end::Svg Icon-->
+                            </div>
+                        </div>
+                        <!--end::Timeline icon-->
+                        <!--begin::Timeline content-->
+                        <div class="timeline-content mb-3 mt-n1">
+                            <!--begin::Timeline heading-->
+                            <div class="mb-3 mt-3 pe-3">
+                                <!--begin::Title-->
+                                <div class="fs-5 fw-bold text-gray-800 text-hover-primary">Khách hàng</div>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Timeline heading-->
+                            <!--begin::Timeline details-->
+                            <div class="overflow-auto pb-5">
+                                <div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-5">
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="CustomerTypes" class="fs-6 text-hover-primary fw-bolder">Loại khách hàng</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--begin::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="Sources" class="fs-6 text-hover-primary fw-bolder">Nguồn khách hàng</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                </div>
+                            </div>
+                            <!--end::Timeline details-->
+                        </div>
+                        <!--end::Timeline content-->
+                    </div>
+                    <!--end::Timeline item-->
+                    <!--begin::Timeline item-->
+                    <div class="timeline-item">
+                        <!--begin::Timeline line-->
+                        <div class="timeline-line w-40px"></div>
+                        <!--end::Timeline line-->
+                        <!--begin::Timeline icon-->
+                        <div class="timeline-icon symbol symbol-circle symbol-40px">
+                            <div class="symbol-label bg-light">
+                                <!--begin::Svg Icon-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="currentColor"></path>
+									<path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="currentColor"></path>
+								</svg>
+                                <!--end::Svg Icon-->
+                            </div>
+                        </div>
+                        <!--end::Timeline icon-->
+                        <!--begin::Timeline content-->
+                        <div class="timeline-content mb-3 mt-n1">
+                            <!--begin::Timeline heading-->
+                            <div class="mb-3 mt-3 pe-3">
+                                <!--begin::Title-->
+                                <div class="fs-5 fw-bold text-gray-800 text-hover-primary">Phiếu thu / chi</div>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Timeline heading-->
+                            <!--begin::Timeline details-->
+                            <div class="overflow-auto pb-5">
+                                <div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-5">
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="Banks" class="fs-6 text-hover-primary fw-bolder">Ngân hàng</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--begin::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="ReceiptGroups" class="fs-6 text-hover-primary fw-bolder">Nhóm phiếu thu</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="ReceiptTypes" class="fs-6 text-hover-primary fw-bolder">Loại phiếu thu</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Icon-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="PaymentGroups" class="fs-6 text-hover-primary fw-bolder">Nhóm phiếu chi</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="PaymentTypes" class="fs-6 text-hover-primary fw-bolder">Loại phiếu chi</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Icon-->
+                                    </div>
+                                    <!--end::Item-->
+                                </div>
+                            </div>
+                            <!--end::Timeline details-->
+                        </div>
+                        <!--end::Timeline content-->
+                    </div>
+                    <!--end::Timeline item-->
+                    <!--begin::Timeline item-->
+                    <div class="timeline-item">
+                        <!--begin::Timeline line-->
+                        <div class="timeline-line w-40px"></div>
+                        <!--end::Timeline line-->
+                        <!--begin::Timeline icon-->
+                        <div class="timeline-icon symbol symbol-circle symbol-40px">
+                            <div class="symbol-label bg-light">
+                                <!--begin::Svg Icon-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="currentColor"></path>
+									<path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="currentColor"></path>
+								</svg>
+                                <!--end::Svg Icon-->
+                            </div>
+                        </div>
+                        <!--end::Timeline icon-->
+                        <!--begin::Timeline content-->
+                        <div class="timeline-content mb-3 mt-n1">
+                            <!--begin::Timeline heading-->
+                            <div class="mb-3 mt-3 pe-3">
+                                <!--begin::Title-->
+                                <div class="fs-5 fw-bold text-gray-800 text-hover-primary">Dịch vụ</div>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Timeline heading-->
+                            <!--begin::Timeline details-->
+                            <div class="overflow-auto pb-5">
+                                <div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-5">
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="ServiceTypes" class="fs-6 text-hover-primary fw-bolder">Loại dịch vụ</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--begin::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="Services" class="fs-6 text-hover-primary fw-bolder">Dịch vụ</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--begin::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                </div>
+                            </div>
+                            <!--end::Timeline details-->
+                        </div>
+                        <!--end::Timeline content-->
+                    </div>
+                    <!--end::Timeline item-->
+                    <!--begin::Timeline item-->
+                    <div class="timeline-item">
+                        <!--begin::Timeline line-->
+                        <div class="timeline-line w-40px"></div>
+                        <!--end::Timeline line-->
+                        <!--begin::Timeline icon-->
+                        <div class="timeline-icon symbol symbol-circle symbol-40px">
+                            <div class="symbol-label bg-light">
+                                <!--begin::Svg Icon-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="currentColor"></path>
+									<path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="currentColor"></path>
+								</svg>
+                                <!--end::Svg Icon-->
+                            </div>
+                        </div>
+                        <!--end::Timeline icon-->
+                        <!--begin::Timeline content-->
+                        <div class="timeline-content mb-3 mt-n1">
+                            <!--begin::Timeline heading-->
+                            <div class="mb-3 mt-3 pe-3">
+                                <!--begin::Title-->
+                                <div class="fs-5 fw-bold text-gray-800 text-hover-primary">Đối tác</div>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Timeline heading-->
+                            <!--begin::Timeline details-->
+                            <div class="overflow-auto pb-5">
+                                <div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-5">
+
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="Partners" class="fs-6 text-hover-primary fw-bolder">Đối tác</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--begin::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                </div>
+                            </div>
+                            <!--end::Timeline details-->
+                        </div>
+                        <!--end::Timeline content-->
+                    </div>
+                    <!--end::Timeline item-->
+                    <!--begin::Timeline item-->
+                    <div class="timeline-item">
+                        <!--begin::Timeline line-->
+                        <div class="timeline-line w-40px"></div>
+                        <!--end::Timeline line-->
+                        <!--begin::Timeline icon-->
+                        <div class="timeline-icon symbol symbol-circle symbol-40px">
+                            <div class="symbol-label bg-light">
+                                <!--begin::Svg Icon-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="currentColor"></path>
+									<path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="currentColor"></path>
+								</svg>
+                                <!--end::Svg Icon-->
+                            </div>
+                        </div>
+                        <!--end::Timeline icon-->
+                        <!--begin::Timeline content-->
+                        <div class="timeline-content mb-3 mt-n1">
+                            <!--begin::Timeline heading-->
+                            <div class="mb-3 mt-3 pe-3">
+                                <!--begin::Title-->
+                                <div class="fs-5 fw-bold text-gray-800 text-hover-primary">Cấu hình khác</div>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Timeline heading-->
+                            <!--begin::Timeline details-->
+                            <div class="overflow-auto pb-5">
+                                <div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-5">
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="UserTypes" class="fs-6 text-hover-primary fw-bolder">Loại người dùng</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--begin::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="Ages" class="fs-6 text-hover-primary fw-bolder">Độ tuổi</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--begin::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="StockRoomTypes" class="fs-6 text-hover-primary fw-bolder">Loại quỹ phòng</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--begin::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-aligns-center">
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a asp-action="Index" asp-controller="Periods" class="fs-6 text-hover-primary fw-bolder">Giai đoạn giá</a>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--begin::Info-->
+                                    </div>
+                                    <!--end::Item-->
+                                </div>
+                            </div>
+                            <!--end::Timeline details-->
+                        </div>
+                        <!--end::Timeline content-->
+                    </div>
+                    <!--end::Timeline item-->
+                    @if(currentUser!.IsRoot == true)
+                    {
+                        <!--begin::Timeline item-->
+                        <div class="timeline-item">
+                            <!--begin::Timeline line-->
+                            <div class="timeline-line w-40px"></div>
+                            <!--end::Timeline line-->
+                            <!--begin::Timeline icon-->
+                            <div class="timeline-icon symbol symbol-circle symbol-40px">
+                                <div class="symbol-label bg-light">
+                                    <!--begin::Svg Icon-->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="currentColor"></path>
+                                        <path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="currentColor"></path>
+                                    </svg>
+                                    <!--end::Svg Icon-->
+                                </div>
+                            </div>
+                            <!--end::Timeline icon-->
+                            <!--begin::Timeline content-->
+                            <div class="timeline-content mb-3 mt-n1">
+                                <!--begin::Timeline heading-->
+                                <div class="mb-3 mt-3 pe-3">
+                                    <!--begin::Title-->
+                                    <div class="fs-5 fw-bold text-gray-800 text-hover-primary">Phân quyền</div>
+                                    <!--end::Title-->
+                                </div>
+                                <!--end::Timeline heading-->
+                                <!--begin::Timeline details-->
+                                <div class="overflow-auto pb-5">
+                                    <div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-5">
+                                        <!--begin::Item-->
+                                        <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                            <!--begin::Info-->
+                                            <div class="ms-1 fw-bold">
+                                                <!--begin::Desc-->
+                                                <a asp-action="Index" asp-controller="UserRoles" class="fs-6 text-hover-primary fw-bolder">Vai trò quản trị</a>
+                                                <!--end::Desc-->
+                                            </div>
+                                            <!--begin::Info-->
+                                        </div>
+                                        <!--end::Item-->
+                                        <!--begin::Item-->
+                                        <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                            <!--begin::Info-->
+                                            <div class="ms-1 fw-bold">
+                                                <!--begin::Desc-->
+                                                <a asp-action="Index" asp-controller="PermActions" class="fs-6 text-hover-primary fw-bolder">Hành vi quản trị</a>
+                                                <!--end::Desc-->
+                                            </div>
+                                            <!--begin::Info-->
+                                        </div>
+                                        <!--end::Item-->
+                                        <!--begin::Item-->
+                                        <div class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                            <!--begin::Info-->
+                                            <div class="ms-1 fw-bold">
+                                                <!--begin::Desc-->
+                                                <a asp-action="Index" asp-controller="PermControllers" class="fs-6 text-hover-primary fw-bolder">Chức năng quản trị</a>
+                                                <!--end::Desc-->
+                                            </div>
+                                            <!--begin::Info-->
+                                        </div>
+                                        <!--end::Item-->
+                                    </div>
+                                </div>
+                                <!--end::Timeline details-->
+                            </div>
+                            <!--end::Timeline content-->
+                        </div>
+                        <!--end::Timeline item-->
+                    }
+                </div>
+                <!--end::Timeline items-->
+            </div>
+            <!--end::Content-->
+        </div>
+        <!--end::Body-->
+    </div>
+</div>
+<!--end::Activities drawer-->
+
+
+

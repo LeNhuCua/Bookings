@@ -1,0 +1,90 @@
+﻿@model Booking.Models.PaginationViewModel
+@{
+    string controllerName = Model.ControllerName ?? this.ViewContext.RouteData.Values["controller"]?.ToString() ?? "";
+    string actionName = Model.ActionName;
+    int showFrom = Model.Results.PageSize * (Model.Results.CurrentPage - 1) + 1;
+    int showTo = Model.Results.PageSize * (Model.Results.CurrentPage - 1) + Model.Results.Count;
+    int startPage = Model.Results.StartPage;
+    int endPage = Model.Results.EndPage;
+    int currentPage = Model.Results.CurrentPage;
+    int totalPages = Model.Results.TotalPages;
+
+    string prevDisabled = Model.Results.HasPrevious ? "" : "disabled";
+    string nextDisabled = Model.Results.HasNext ? "" : "disabled";
+
+    object GetQueryParams(int page)
+    {
+        Model.QueryParams["page"] = page;
+        return Model.QueryParams;
+    }
+}
+
+<div class="row py-5">
+    <div class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start">
+        Hiển thị từ @(Model.Results.Count > 0 ? showFrom : 0) tới @(Model.Results.Count > 0 ? showTo : 0)
+        của @Model.Results.TotalItems kết quả
+    </div>
+    @if (Model.Results.TotalPages > 1)
+    {
+        <div class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end">
+            <ul class="pagination">
+                <li class="page-item previous @prevDisabled">
+                    <a class="page-link @Model.LinkClass" href="@Url.Action(actionName, controllerName, GetQueryParams(currentPage - 1))">
+                        <i class="previous" style="pointer-events: none;"></i>
+                    </a>
+                </li>
+                @* Render first page *@
+                <li class="page-item @(currentPage == 1 ? "active" : "")">
+                    <a class="page-link @Model.LinkClass" href="@Url.Action(actionName, controllerName, GetQueryParams(1))">1</a>
+                </li>
+
+                @* Render ... (dot dot dot) *@
+                @if (currentPage - 2 > 2)
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link" href="">...</span>
+                    </li>
+                }
+
+                @* Render middle pages *@
+                @for (int _page = currentPage - 2; _page <= currentPage + 2; _page++)
+                {
+                    if (_page <= 1)
+                    {
+                        continue;
+                    }
+
+                    if (_page >= totalPages)
+                    {
+                        continue;
+                    }
+                    <li class="page-item @(_page == currentPage ? "active" : "")">
+                        <a class="page-link @Model.LinkClass" href="@Url.Action(actionName, controllerName, GetQueryParams(_page))">@_page</a>
+                    </li>
+                }
+
+                @* Render ... (dot dot dot) *@
+                @if (currentPage + 2 < totalPages - 1)
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">...</span>
+                    </li>
+                }
+
+                @* Render last page *@
+                @if (totalPages > 1)
+                {
+                    <li class="page-item @(totalPages == currentPage ? "active" : "")">
+                        <a class="page-link @Model.LinkClass" href="@Url.Action(actionName, controllerName, GetQueryParams(totalPages))">@totalPages</a>
+                    </li>
+                }
+
+                <li class="page-item next @nextDisabled">
+                    <a class="page-link next @Model.LinkClass" href="@Url.Action(actionName, controllerName, GetQueryParams(currentPage + 1))" aria-label="Next">
+                        <i class="next" style="pointer-events: none;"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    }
+</div>

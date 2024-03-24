@@ -1,0 +1,168 @@
+﻿@model Entities.Models.Customer
+@{
+  ViewData["Title"] = "Tạo khách hàng";
+  IEnumerable<SelectListItem> genderSelectListItems = (IEnumerable<SelectListItem>?)ViewData["Gender"] ??
+  Enumerable.Empty<SelectListItem>();
+
+  IEnumerable<SelectListItem> vocativeSelectListItems = (IEnumerable<SelectListItem>?)ViewData["Vocative"] ??
+  Enumerable.Empty<SelectListItem>();
+
+
+}
+<!--begin::Modal content-->
+<div class="modal-content">
+  <!--begin::Modal header-->
+  <div class="modal-header">
+    <!--begin::Modal title-->
+    <h2>@Html.Raw(ViewData["Title"])</h2>
+    <!--end::Modal title-->
+    <!--begin::Close-->
+    <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+      <!--begin::Svg Icon -->
+      <span class="svg-icon svg-icon-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)"
+            fill="black" />
+          <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+        </svg>
+      </span>
+      <!--end::Svg Icon-->
+    </div>
+    <!--end::Close-->
+  </div>
+  <!--end::Modal header-->
+  <!--begin::Modal body-->
+  <div class="modal-body py-lg-10 px-lg-10">
+    <form asp-action="Create" class="form">
+      <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+      <div class="row mb-7">
+        <!--begin::Col-->
+        <div class="col-xl-4">
+          <label asp-for="Code" class="control-label fs-6 fw-bold mb-2"></label>
+          <input asp-for="Code" class="form-control form-control-solid mb-3 mb-lg-0" autocomplete="off" />
+          <span asp-validation-for="Code" class="text-danger"></span>
+        </div>
+        <!--end::Col-->
+        <!--begin::Col-->
+        <div class="col-xl-4">
+          <label asp-for="Vocative" class="control-label fs-6 fw-bold mb-2"></label>
+          <select asp-for="Vocative" class="form-select form-select-solid" asp-items="@vocativeSelectListItems">
+            <option value="">Chọn danh xưng</option>
+          </select>
+          <span asp-validation-for="Vocative" class="text-danger"></span>
+        </div>
+
+        <div class="col-xl-4">
+          <label asp-for="Gender" class="control-label fs-6 fw-bold mb-2"></label>
+          <select asp-for="Gender" class="form-select form-select-solid" asp-items="@genderSelectListItems">
+            <option value="">Chọn giới tính</option>
+          </select>
+          <span asp-validation-for="Gender" class="text-danger"></span>
+
+        </div>
+        <!--end::Col-->
+      </div>
+
+      <div class="row mb-7">
+        <div class="col-xl-4 form-group fv-row">
+
+          <label asp-for="FirstMidName" class="control-label fs-6 fw-bold mb-2">Họ và tên đệm</label>
+          <input asp-for="FirstMidName" class="form-control form-control-solid mb-3 mb-lg-0" autocomplete="off" />
+          <span asp-validation-for="FirstMidName" class="text-danger"></span>
+
+        </div>
+        <div class="col-xl-4 form-group fv-row">
+
+          <label asp-for="LastName" class="control-label fs-6 fw-bold mb-2">Tên</label>
+          <input asp-for="LastName" class="form-control form-control-solid mb-3 mb-lg-0" autocomplete="off" />
+          <span asp-validation-for="LastName" class="text-danger"></span>
+
+        </div>
+        <div class="col-xl-4 form-group fv-row">
+
+
+          <label asp-for="Birthday" class="control-label fs-6 fw-bold mb-2">Tên</label>
+          <input asp-for="Birthday" class="form-control form-control-solid mb-3 mb-lg-0" data-date-time="flatpickr" />
+          <span asp-validation-for="Birthday" class="text-danger"></span>
+
+        </div>
+      </div>
+
+
+
+      <div class="row mb-7">
+        <div class="col-xl-4 form-group fv-row">
+          <label asp-for="Phone" class="control-label fs-6 fw-bold mb-2"></label>
+          <input asp-for="Phone" class="form-control form-control-solid mb-3 mb-lg-0" autocomplete="off" />
+          <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+        <div class="col-xl-4 form-group fv-row">
+
+
+          <label asp-for="Address" class="control-label fs-6 fw-bold mb-2"></label>
+          <input asp-for="Address" class="form-control form-control-solid mb-3 mb-lg-0" autocomplete="off" />
+          <span asp-validation-for="Address" class="text-danger"></span>
+
+        </div>
+        <div class="col-xl-4 form-group fv-row">
+
+          <label asp-for="Email" class="control-label fs-6 fw-bold mb-2"></label>
+          <input asp-for="Email" class="form-control form-control-solid mb-3 mb-lg-0" autocomplete="off" />
+          <span asp-validation-for="Email" class="text-danger"></span>
+
+
+        </div>
+      </div>
+
+
+
+      <div class="row mb-7">
+        <div class="col-xl-4 form-group fv-row">
+          <label asp-for="ProvinceID" class="control-label fs-6 fw-bold mb-2"></label>
+          <select asp-for="ProvinceID" class="form-select form-select-solid"
+            asp-items="@(new SelectList(ViewBag.Provinces, "ID", "Name"))">
+            <option value="">Chọn Tỉnh/Thành phố</option>
+          </select>
+          <span asp-validation-for="ProvinceID" class="text-danger"></span>
+        </div>
+        <div class="col-xl-4 form-group fv-row">
+
+
+          <label asp-for="CustomerTypeID" class="control-label fs-6 fw-bold mb-2"></label>
+          <select asp-for="CustomerTypeID" class="form-select form-select-solid"
+            asp-items="@(new SelectList(ViewBag.Provinces, "ID", "Name"))">
+            <option value="">Chọn loại khách hàng</option>
+          </select>
+          <span asp-validation-for="CustomerTypeID" class="text-danger"></span>
+
+        </div>
+
+      </div>
+
+      <div class="row mb-7">
+        <div class="form-floating">
+          <textarea asp-for="About" class="form-control form-control-solid mb-3 mb-lg-0" rows="5"></textarea>
+        </div>
+      </div>
+      <div class="row mb-7">
+        <!--begin::Col-->
+        <div class="col-xl-6">
+          <label class="control-label mb-4">Trạng thái</label>
+          <div class="form-check form-switch form-check-custom form-check-solid">
+            <input asp-for="Status"   class="form-check-input" type="checkbox" />
+            <label asp-for="Status" class="form-check-label"></label>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="text-center pt-15">
+          <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Hủy</button>
+          <button type="submit" class="btn btn-primary">Lưu</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!--end::Modal body-->
+</div>
+<!--end::Modal content-->

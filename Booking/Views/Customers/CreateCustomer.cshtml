@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Tạo khách hàng";
+}
+<div class="modal fade" id="modal-create-customer" data-bs-backdrop="static">
+	<div class="modal-dialog modal-dialog-centered modal-xl">
+<!--begin::Modal content-->
+<div class="modal-content">
+    <!--begin::Modal header-->
+    <div class="modal-header">
+        <!--begin::Modal title-->
+        <h2>@Html.Raw(ViewData["Title"])</h2>
+        <!--end::Modal title-->
+        <!--begin::Close-->
+        <div class="btn btn-sm btn-icon btn-active-color-primary remove-form" data-bs-dismiss="modal">
+            <!--begin::Svg Icon -->
+            <span class="svg-icon svg-icon-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+                </svg>
+            </span>
+            <!--end::Svg Icon-->
+        </div>
+        <!--end::Close-->
+    </div>
+    <!--end::Modal header-->
+    <!--begin::Modal body-->
+    <div class="modal-body py-lg-10 px-lg-10">
+        <form asp-action="Create" class="form" id="create-customer-form">
+           
+        </form>
+    </div>
+    <!--end::Modal body-->
+</div>
+    <!--end::Modal content-->
+    </div></div>

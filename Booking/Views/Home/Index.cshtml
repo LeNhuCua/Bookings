@@ -1,21 +1,55 @@
-﻿@model List<User>
-@using Entities.Models;
-@using Config.Helpers;
-
-@{
-  ViewData["Title"] = "Home Page";
-  var users = Model as List<User>;
+﻿@{
+    ViewData["Title"] = "Tổng quan";
 }
 
-<div class="text-center">
-  <h1 class="display-4">Welcome</h1>
-  <div class="menu-item px-5">
-    @foreach (var user in users)
-    {
-      <h1>@user.Address</h1>
-    }
-
-    <a asp-action="Logout" asp-controller="Authentication" class="menu-link px-5">Đăng
-      xuất</a>
-  </div>
+<!--begin::Toolbar-->
+<div class="toolbar py-4 py-lg-10" id="kt_toolbar">
+    <!--begin::Container-->
+    <div class="container-xxl d-flex flex-stack flex-wrap">
+        <!--begin::Title-->
+        <h3 class="text-white fw-bolder fs-1qx me-5">@Html.Raw(ViewData["Title"])</h3>
+        <!--begin::Title-->
+        <!--begin::Actions-->
+        <div class="d-flex align-items-center flex-wrap py-2">
+        </div>
+        <!--end::Actions-->
+    </div>
+    <!--end::Container-->
 </div>
+<!--end::Toolbar-->
+<!--begin::Container-->
+<div class="d-flex flex-column-fluid align-items-start container-xxl">
+    <!--begin::Post-->
+    <div class="content flex-row-fluid" id="kt_content">
+        <!--begin::Index-->
+        <div class="card card-page">
+            <!--begin::Card body-->
+            <div class="card-body">
+                <div class="row gy-5 g-xl-8">
+                    <div class="col-xxl-8">
+                        <partial name="RevenueChart" />
+                    </div>
+                    <!--begin::Col-->
+                    <div class="col-xxl-4">
+                        @* <partial name="GeneralStatistic" /> *@
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--begin::Row-->
+
+                <!--end::Row-->
+            </div>
+            <!--end::Card body-->
+        </div>
+        <!--end::Index-->
+    </div>
+    <!--end::Post-->
+</div>
+<!--end::Container-->
+
+@section EndScripts
+{
+    <script defer src="js/custom/statistic-report.bundle.js" asp-append-version="true"></script>
+    <script defer src="js/custom/dashboard.bundle.js" asp-append-version="true"></script>
+    <script defer src="~/js/custom/formsteps.js" asp-append-version="true"></script>
+}

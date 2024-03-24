@@ -6,7 +6,7 @@ namespace Booking.Controllers
 {
     public class AuthenticationController : Controller
     {
-        
+
         private readonly BookingDbContext _context;
         private readonly IBookingService _bookingService;
 
@@ -31,7 +31,7 @@ namespace Booking.Controllers
 
             if (accessToken == null)
             {
-                ModelState.AddModelError("", "Invalid credentials");
+                ModelState.AddModelError("", "Email or password is incorrect");
                 return View();
             }
 

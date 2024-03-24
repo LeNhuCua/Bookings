@@ -15,8 +15,16 @@ namespace Data
       _httpContextAccessor = accessor;
     }
 
+    public DbSet<Age> Ages { get; set; }
+
+    public DbSet<Province> Provinces { get; set; }
 
     public DbSet<User> Users { get; set; }
+
+    public DbSet<CustomerType> CustomerTypes { get; set; }
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Booking> Bookings { get; set; }
+
 
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -46,20 +54,20 @@ namespace Data
             }
             // set
             entity.LastUpdated = DateTime.Now;
-            entity.UpdatedBy = entity.ID;
+            entity.UpdatedBy = int.Parse(currentUserID ?? "1");
 
             break;
           case EntityState.Added:
             entity.DateCreated = DateTime.Now;
             entity.LastUpdated = DateTime.Now;
             entity.IsDelete = false;
-            entity.UpdatedBy = entity.ID;
-            entity.CreatedBy = entity.ID;
+            entity.UpdatedBy = int.Parse(currentUserID ?? "1");
+            entity.CreatedBy = int.Parse(currentUserID ?? "1");
 
             break;
           case EntityState.Deleted:
             entity.DateDeleted = DateTime.Now;
-            entity.DeletedBy = entity.ID;
+            entity.DeletedBy = int.Parse(currentUserID ?? "1");
             break;
         }
 
@@ -192,6 +200,29 @@ namespace Data
 
 
 
+        /// <summary>
+        /// Lấy ID tiếp theo từ chuỗi (DH00000123)
+        /// </summary>
+        /* ví dụ: string nextID = await context.GetNextStringID<Booking>(s => s.Code, "DH", 8); */
+        /* trả về DH00000005 */
+        public async Task<string> GetNextStringID<T>(
+            System.Linq.Expressions.Expression<Func<T, string>> selector,
+            string prefix,
+            int lenght
+        ) where T : BaseEntity
+        {
+            long? lastID = await base.Set<T>()
+                .IgnoreQueryFilters()
+                .Select(selector)
+                .Where(s => s.StartsWith(prefix))
+                .MaxAsync(s => ((long?)Convert.ToInt64(s.Replace(prefix, ""))));
+
+            long nextID = (lastID ?? 0) + 1;
+            return $"{prefix}{nextID.ToString($"D{lenght}")}";
+        }
+
+
+
   }
 
 
@@ -207,60 +238,5 @@ namespace Data
                .GetMethods(BindingFlags.Public | BindingFlags.Static)
                .Single(t => t.IsGenericMethod && t.Name == "ApplyGlobalFilter");
 
-    //public static void ApplyGlobalFilter<TEntity>(this ModelBuilder modelBuilder)
-    //    where TEntity : BaseEntity
-    //{
-    //    if (typeof(TEntity) == typeof(PaymentDetail))
-    //    {
-    //        modelBuilder.Entity<PaymentDetail>()
-    //            .HasQueryFilter(s => !s.IsDelete
-    //                && s.Payment.Status == 1
-    //                && (
-    //                    // BookingID == null => không phải phiếu chi đơn hàng/đối tác
-    //                    s.BookingID == null
-    //                    // nếu là phiếu chi đơn hàng/đối tác thì chỉ lấy những đơn hàng chưa bị xóa và có khách hàng chưa bị xóa
-    //                    || (!s.Booking.IsDelete && !s.Booking.Customer.IsDelete)
-    //                )
-    //            );
-    //        return;
-    //    }
-    //    if (typeof(TEntity) == typeof(ReceiptDetail))
-    //    {
-    //        modelBuilder.Entity<ReceiptDetail>()
-    //            .HasQueryFilter(s => !s.IsDelete && s.Receipt.Status == 1 && !s.Booking.IsDelete);
-    //        return;
-    //    }
-    //    if (typeof(TEntity) == typeof(Booking))
-    //    {
-    //        modelBuilder.Entity<Booking>()
-    //            .HasQueryFilter(s => !s.IsDelete && !s.Customer.IsDelete);
-    //        return;
-    //    }
-    //    if (typeof(TEntity) == typeof(TicketCode))
-    //    {
-    //        modelBuilder.Entity<TicketCode>()
-    //            .HasQueryFilter(s => !s.IsDelete && !s.Booking.IsDelete);
-    //        return;
-    //    }
-    //    if (typeof(TEntity) == typeof(BookingTicket))
-    //    {
-    //        modelBuilder.Entity<BookingTicket>()
-    //            .HasQueryFilter(s => !s.IsDelete && !s.Booking.IsDelete);
-    //        return;
-    //    }
-    //    if (typeof(TEntity) == typeof(BookingHotel))
-    //    {
-    //        modelBuilder.Entity<BookingHotel>()
-    //            .HasQueryFilter(s => !s.IsDelete
-    //                && !s.Booking.IsDelete
-    //                && !s.Hotel.IsDelete
-    //                && !s.RoomType.IsDelete
-    //            );
-    //        return;
-    //    }
-
-    //    modelBuilder.Entity<TEntity>().HasQueryFilter(x => !x.IsDelete);
-
-    //}
   }
 }

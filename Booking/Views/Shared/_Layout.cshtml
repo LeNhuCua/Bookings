@@ -1,49 +1,77 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Booking</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Booking.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Booking</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/plugins.bundle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.bundle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/custom.bundle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/flatpickr-month-select.css" />
+    <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@tabler/icons-webfont@latest/tabler-icons.min.css">
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Booking - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/lib/jqueryui/themes/base/theme.css" />
+    <link rel="stylesheet" href="~/lib/jqueryui/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="~/lib/elfinder/css/elfinder.full.css">
+    <link rel="stylesheet" href="~/lib/elfinder/css/theme.min.css">
+
+    <script src="~/js/plugins.bundle.js" asp-append-version="true"></script>
+    <script src="~/js/scripts.bundle.js" asp-append-version="true"></script>
+    <script src="~/js/plugin/flatpickr-month-select.js"></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <script src="~/js/plugin/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.1/echarts.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" asp-append-version="true"></script>
+    <script defer src="~/lib/elfinder/js/elfinder.min.js" asp-append-version="true"></script>
+    @* <script defer src="~/lib/tinymce/tinymce.min.js" asp-append-version="true"></script> *@
+    <script defer src="~/admin/js/elfindertinymce.js" asp-append-version="true"></script>
+    <script async src="~/js/plugin/cleave-phone.vn.js" ></script>
+    <script async src="~/js/plugin/cleave.min.js"></script>
+    <script defer src="~/js/helper/helper.js" asp-append-version="true"></script>
+    <script defer src="~/js/helper/image-input.js" asp-append-version="true"></script>
+    <script defer src="~/js/helper/date-input.js" asp-append-version="true"></script>
+    <script defer src="~/js/helper/count-up.js" asp-append-version="true"></script>
+    <script defer src="~/js/helper/select.js" asp-append-version="true"></script>
+    <script defer src="~/js/helper/modal.js" asp-append-version="true"></script>
+    <script defer src="~/js/helper/tab.js" asp-append-version="true"></script>
+    <script defer src="~/js/helper/text-editor.js" asp-append-version="true"></script>
+    <script defer src="~/js/custom/custom.bundle.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Styles", required: false)
     @await RenderSectionAsync("Scripts", required: false)
+</head>
+
+<body id="kt_body" style="background-image: url(/images/patterns/header-bg.png)" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled">
+    <!--begin::Main-->
+    <!--begin::Root-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="page d-flex flex-row flex-column-fluid">
+            <!--begin::Wrapper-->
+            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+                <partial name="Header" />
+                <partial name="Topbar" model="ViewBag.CurrentUser" />
+                <!--begin::Container-->
+                @RenderBody()
+                <!--end::Container-->
+                <partial name="Footer" />
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Page-->
+    </div>
+    <!--end::Root-->
+
+    @await RenderSectionAsync("EndScripts", required: false)
 </body>
+
 </html>

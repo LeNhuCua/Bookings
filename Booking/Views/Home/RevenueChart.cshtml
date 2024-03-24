@@ -1,0 +1,47 @@
+<div class="card card-xl-stretch mb-5 mb-xl-8" id="revenue-chart">
+    <div class="card-header border-0 pt-5">
+        <h3 class="card-title align-items-start flex-column">
+            <span class="card-label fw-bolder text-dark">Tổng quan doanh thu</span>
+        </h3>
+        <div class="card-toolbar">     
+            <div data-control="jquery-date-range-picker"
+                data-display-target="div"
+                class="btn btn-sm btn-light d-flex align-items-center px-4"
+            >           
+                <div class="text-gray-600 fw-bold">-----------------</div>
+                <i class="ti ti-calendar fs-2"></i>
+            </div>
+        </div>
+    </div>
+    <div class="card-body pt-5">
+        <div class="px-9 mb-5" data-revenue-summary>   
+            <div class="d-flex align-items-center mb-2">   
+                <span class="fs-4 fw-semibold text-gray-400 align-self-start me-1">VNĐ</span>
+                <span class="fs-2hx fw-bold text-gray-800 me-2 lh-1 ls-n2"
+                    data-amount
+                    data-f-count-up
+                >
+                    0
+                </span>
+                <span class="badge badge-success fs-base"
+                    data-badge
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title=""
+                >                                
+                    <i class="ti ti-arrow-up text-white" data-icon></i>
+                    <span data-growth-percentage data-f-count-up>0</span>%
+                </span>
+            </div>
+            <span class="fs-6 fw-semibold text-gray-400"
+                data-text
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title=""
+            >
+                So với tháng trước
+            </span>
+        </div>
+        <div data-chart></div>
+    </div>
+</div>
